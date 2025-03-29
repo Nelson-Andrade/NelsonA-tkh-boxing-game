@@ -24,7 +24,7 @@ function applyDamage(opponent, damage) {
     }
 
     opponent.health -= damage;
-    if (opponent.health < 0 ||  opponent.health === 0) {
+    if (opponent.health < 0 ||  damage > 9) {
         // Ensure health doesn't go below 0 and automatic KO
         opponent.health = 0;
     }
