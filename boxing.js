@@ -17,12 +17,13 @@ function generateDamage() {
 function applyDamage(opponent, damage) {
     if (damage < 6) {
         console.log(`${currentPlayer.name} lands a basic hit on ${opponent.name}!`);
-    } else if (6 <= damage || damage <= 9) {
+    } else if (6 <= damage && damage <= 9) {
         console.log(`${currentPlayer.name} lands a critical hit on ${opponent.name}!`);
     } else {
         console.log(`${currentPlayer.name} lands a KNOCKOUT on ${opponent.name}!🥊`);
     }
 
+    // console.log(damage);
     opponent.health -= damage;
     if (opponent.health < 0 ||  damage > 9) {
         // Ensure health doesn't go below 0 and automatic KO
